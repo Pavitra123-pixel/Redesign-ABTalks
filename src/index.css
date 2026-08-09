@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-base: #0b0d12;
+  --color-surface: #14171f;
+  --color-surface-2: #1b1f2a;
+  --color-surface-3: #232838;
+  --color-line: #262b38;
+
+  --color-ink: #ece9e3;
+  --color-ink-muted: #8b90a0;
+  --color-ink-dim: #5b6070;
+
+  --color-amber: #f2a93b;
+  --color-amber-dim: #6b5527;
+  --color-teal: #3fbf9f;
+  --color-teal-dim: #1f4038;
+  --color-red: #e2574c;
+  --color-red-dim: #4a2620;
+}
+
+html {
+  background: var(--color-base);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--color-base);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-amber);
+  color: #16130a;
+}
+
+/* subtle grain / vignette to give the "desk lamp at night" atmosphere */
+.lamp-glow {
+  background: radial-gradient(60% 50% at 50% 0%, rgba(242, 169, 59, 0.16), transparent 70%);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
